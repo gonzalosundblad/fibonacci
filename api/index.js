@@ -12,8 +12,11 @@ function nFibonacci(n) {
     return (nFibonacci(n - 1) + nFibonacci(n - 2));
   }
 
+  
+app.get("/", (req, res, next) => {
+  res.send('Enter an index as a parameter and you will recieve your fibonacci! Any client app that sends an index as a parameter will recieve as a response its corresponding fibonacci.')
+});
+
 app.get("/:index", (req, res, next) => {
-
         res.json(nFibonacci(req.params.index))
-
-   });
+});
